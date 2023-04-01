@@ -13,8 +13,10 @@ struct DefaulterApp: App {
     
     var body: some Scene {
         Window("Defaulter", id: "mainWindow") {
-            ContentView()
+            MainWindowView()
                 .environmentObject(systemSettings)
         }
+        .windowStyle(.hiddenTitleBar)
+        .windowToolbarStyle(.unified)
     }
 }

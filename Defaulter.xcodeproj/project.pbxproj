@@ -11,7 +11,9 @@
 		3484749D29D8771700195712 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3484749C29D8771700195712 /* Preview Assets.xcassets */; };
 		348474A029D8772800195712 /* DefaulterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484749F29D8772800195712 /* DefaulterApp.swift */; };
 		348474A429D8773900195712 /* SystemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348474A329D8773900195712 /* SystemSettings.swift */; };
-		348474A729D8774400195712 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348474A629D8774400195712 /* ContentView.swift */; };
+		348474A729D8774400195712 /* MainWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348474A629D8774400195712 /* MainWindowView.swift */; };
+		348474AB29D8A91400195712 /* SettingsPanePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348474AA29D8A91400195712 /* SettingsPanePicker.swift */; };
+		348474AE29D8AD0400195712 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348474AD29D8AD0400195712 /* Tab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +23,9 @@
 		3484749E29D8772000195712 /* Defaulter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Defaulter.entitlements; sourceTree = "<group>"; };
 		3484749F29D8772800195712 /* DefaulterApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaulterApp.swift; sourceTree = "<group>"; };
 		348474A329D8773900195712 /* SystemSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSettings.swift; sourceTree = "<group>"; };
-		348474A629D8774400195712 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		348474A629D8774400195712 /* MainWindowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowView.swift; sourceTree = "<group>"; };
+		348474AA29D8A91400195712 /* SettingsPanePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPanePicker.swift; sourceTree = "<group>"; };
+		348474AD29D8AD0400195712 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				3484749F29D8772800195712 /* DefaulterApp.swift */,
+				348474AC29D8ACEE00195712 /* Extensions */,
 				348474A129D8773900195712 /* Models */,
 				348474A529D8774400195712 /* Views */,
 				3484749929D8771300195712 /* Assets.xcassets */,
@@ -91,9 +96,18 @@
 		348474A529D8774400195712 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				348474A629D8774400195712 /* ContentView.swift */,
+				348474A629D8774400195712 /* MainWindowView.swift */,
+				348474AA29D8A91400195712 /* SettingsPanePicker.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		348474AC29D8ACEE00195712 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				348474AD29D8AD0400195712 /* Tab.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,9 +181,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348474AE29D8AD0400195712 /* Tab.swift in Sources */,
 				348474A029D8772800195712 /* DefaulterApp.swift in Sources */,
 				348474A429D8773900195712 /* SystemSettings.swift in Sources */,
-				348474A729D8774400195712 /* ContentView.swift in Sources */,
+				348474A729D8774400195712 /* MainWindowView.swift in Sources */,
+				348474AB29D8A91400195712 /* SettingsPanePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

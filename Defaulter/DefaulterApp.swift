@@ -15,8 +15,10 @@ struct DefaulterApp: App {
         Window("Defaulter", id: "mainWindow") {
             MainWindowView()
                 .environmentObject(systemSettings)
-        }
+         }
         .windowStyle(.hiddenTitleBar)
         .windowToolbarStyle(.unified)
+        
+        .defaultSize(width: 400, height: 100)
     }
 }

@@ -9,23 +9,37 @@ import SwiftUI
 
 struct MainWindowView: View {
     @EnvironmentObject private var systemSettings: SystemSettings
-    
-    let tabs: [(String, String): View] = [
-        ("Dock", "dock.rectangle"),
-        ("Launchpad", "square.grid.3x3"),
-        ("Windows", "macwindow"),
-        ("Screenshot", "camera.viewfinder"),
-        ("Finder", "folder"),
-        ("Quick Look", "eye"),
-        ("Desktop", "menubar.dock.rectangle"),
-        ("Help Viewer", "questionmark.circle"),
-        ("Keyboard", "keyboard"),
-        ("Crash Reporter", "exclamationmark.triangle")
-    ]
+    @State private var currentPane: Pane = .mainPanes[0]
     
     var body: some View {
-        EmptyView()
+        NavigationSplitView {
+            List(Pane.mainPanes, id: \.self, selection: $currentPane) { pane in
+                Label(pane.name, systemImage: pane.systemImage)
+                    .tag(pane)
+                    .fontDesign(.rounded)
+            }
+            .background(VisualEffectView(material: .popover).ignoresSafeArea())
+        } detail: {
+            DockPane()
+        }
+        .toolbar {
+            Text(currentPane.name)
+                .font(.system(.title2, design: .rounded, weight: .semibold))
+        }
+        .background(VisualEffectView(material: .sidebar).ignoresSafeArea())
     }
+}
+
+struct VisualEffectView: NSViewRepresentable {
+    var material: NSVisualEffectView.Material
+    
+    func makeNSView(context: Context) -> some NSView {
+        let view = NSVisualEffectView()
+        view.material = material
+        return view
+    }
+    
+    func updateNSView(_ nsView: NSViewType, context: Context) { }
 }
 
 struct MainWindowView_Previews: PreviewProvider {

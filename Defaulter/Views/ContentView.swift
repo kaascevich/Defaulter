@@ -2,20 +2,16 @@
 //  ContentView.swift
 //  Defaulter
 //
-//  Created by Kaleb on 4/1/23.
+//  Created by Kaleb on 3/31/23.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject private var systemSettings: SystemSettings
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        EmptyView()
     }
 }
 

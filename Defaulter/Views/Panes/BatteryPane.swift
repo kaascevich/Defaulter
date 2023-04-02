@@ -12,7 +12,7 @@ struct BatteryPane: View {
     
     var body: some View {
         Form {
-            
+            Toggle("Disable charging sound", isOn: systemSettings.$disableChargingSound)
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)

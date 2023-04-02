@@ -12,7 +12,8 @@ struct MailPane: View {
     
     var body: some View {
         Form {
-            
+            Toggle("Disable send animations", isOn: systemSettings.$disableSendAnimations)
+            Toggle("Disable reply animations", isOn: systemSettings.$disableReplyAnimations)
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)

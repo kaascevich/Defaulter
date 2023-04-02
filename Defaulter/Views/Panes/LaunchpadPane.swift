@@ -17,9 +17,10 @@ struct LaunchpadPane: View {
                 StepperField(value: systemSettings.$launchpadColumns, in: 1...15, step: 1, label: "Number of columns:")
             }
             Section("Animations") {
-                StepperField(value: systemSettings.$launchpadShowAnimationDuration, in: 0...10, step: 0.1, label: "Animation duration for showing Launchpad:")
-                StepperField(value: systemSettings.$launchpadHideAnimationDuration, in: 0...10, step: 0.1, label: "Animation duration for hiding Launchpad:")
+                StepperField(value: systemSettings.$launchpadShowAnimationDuration, in: 0...10, step: 0.1, label: "Animation duration for showing Launchpad (in seconds):")
+                StepperField(value: systemSettings.$launchpadHideAnimationDuration, in: 0...10, step: 0.1, label: "Animation duration for hiding Launchpad (in seconds):")
             }
+            Toggle("Reset Launchpad on next Dock relaunch", isOn: systemSettings.$resetLaunchpadOnNextDockLaunch)
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)

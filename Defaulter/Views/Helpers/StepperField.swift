@@ -12,8 +12,12 @@ struct StepperField: View {
         self.step = step
         self.label = label
     }
-    init(value: Binding<Int>, in range: ClosedRange<Double>, step: Double = 1, label: String = "") {
-        self.init(value: value.double, in: range, step: step, label: label)
+    init(value: Binding<Int>, in range: ClosedRange<Int>, step: Int = 1, label: String = "") {
+        self.init(
+            value: value.double,
+            in: Double(range.lowerBound)...Double(range.upperBound),
+            step: Double(step),
+            label: label)
         isInt = true
     }
     

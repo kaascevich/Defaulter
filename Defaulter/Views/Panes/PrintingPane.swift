@@ -12,7 +12,7 @@ struct PrintingPane: View {
     
     var body: some View {
         Form {
-            
+            Toggle("Quit printer app when printing finishes", isOn: systemSettings.$quitPrinterAppWhenPrintingFinishes)
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)

@@ -1,0 +1,25 @@
+# Examples
+ - Thu Aug 18 23:46:18 -> `EEE MMM d HH:mm:ss`
+ - Thu 23:46:18 -> `EEE HH:mm:ss`
+ - Aug 18 23:46:18 -> `MMM d HH:mm:ss`
+ - 23:46:18 -> `HH:mm:ss`
+ - Thu Aug 18 11:46:18 pm -> `EEE MMM d h:mm:ss a`
+ - Thu 11:46:18 pm -> `EEE h:mm:ss a`
+ - Aug 18 11:46:18 pm -> `MMM d h:mm:ss a`
+ - 11:46:18 pm -> `h:mm:ss a`
+ - Thu Aug 18 11:46:18 -> `EEE MMM d h:mm:ss`
+ - Thu 11:46:18 -> `EEE h:mm:ss`
+ - Aug 18 11:46:18 -> `MMM d h:mm:ss`
+ - 11:46:18 -> `h:mm:ss`
+ - Thu Aug 18 23:46 -> `EEE MMM d HH:mm`
+ - Thu 23:46 -> `EEE HH:mm`
+ - Aug 18 23:46 -> `MMM d HH:mm`
+ - 23:46 -> `HH:mm`
+ - Thu Aug 18 11:46 pm -> `EEE MMM d h:mm a`
+ - Thu 11:46 pm -> `EEE h:mm a`
+ - Aug 18 11:46 pm -> `MMM d h:mm a`
+ - 11:46 pm -> `h:mm a`
+ - Thu Aug 18 11:46 -> `EEE MMM d h:mm`
+ - Thu 11:46 -> `EEE h:mm`
+ - Aug 18 11:46 -> `MMM d h:mm`
+ - 11:46 -> `h:mm`

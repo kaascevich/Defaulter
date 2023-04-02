@@ -16,10 +16,10 @@ struct DefaulterApp: App {
             MainWindowView()
                 .environmentObject(systemSettings)
                 .fontDesign(.rounded)
+                .frame(minWidth: 800, minHeight: 500)
          }
         .windowStyle(.hiddenTitleBar)
         .windowToolbarStyle(.unified)
-        
-        .defaultSize(width: 400, height: 100)
+        .windowResizability(.contentMinSize)
     }
 }

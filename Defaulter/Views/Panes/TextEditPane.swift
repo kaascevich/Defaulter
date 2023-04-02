@@ -12,7 +12,7 @@ struct TextEditPane: View {
     
     var body: some View {
         Form {
-            
+            Toggle("When opening TextEdit, create a new Untitled file instead of showing the open panel", isOn: systemSettings.$showOpenPanelInsteadOfUntitledFile)
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)

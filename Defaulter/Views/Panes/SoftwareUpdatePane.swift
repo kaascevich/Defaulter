@@ -12,7 +12,7 @@ struct SoftwareUpdatePane: View {
     
     var body: some View {
         Form {
-            
+            StepperField(value: systemSettings.$updateCheckFrequency, in: 1...365, label: "Update check frequency (in days):")
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)

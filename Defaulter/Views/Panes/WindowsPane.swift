@@ -12,8 +12,7 @@ struct WindowsPane: View {
     
     var body: some View {
         Form {
-            Text("Under Construction")
-                .font(.headline.weight(.medium))
+            Toggle("Show one app at a time", isOn: systemSettings.$singleAppMode)
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)

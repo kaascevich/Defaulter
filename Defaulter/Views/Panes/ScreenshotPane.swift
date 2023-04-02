@@ -17,6 +17,7 @@ struct ScreenshotPane: View {
             }
             Toggle("Show thumbnail", isOn: systemSettings.$showScreenshotThumbnail)
             Toggle("Include date in filenames", isOn: systemSettings.$includeDateInScreenshotFilename)
+            TextField("Default screenshot filename:", text: systemSettings.$defaultScreenshotName)
             Picker("Save screenshots as:", selection: systemSettings.$saveScreenshotAsType) {
                 ForEach(SystemSettings.ScreenshotFileType.allCases, id: \.self) {
                     Text($0.rawValue.uppercased())

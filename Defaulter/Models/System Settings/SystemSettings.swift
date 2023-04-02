@@ -85,11 +85,11 @@ final class SystemSettings: ObservableObject {
     
     // MARK: - Windows
     
-    @AppStorage("NSWindowResizeTime", store: Store.global.store)
-    var windowResizeAnimationLength: Double?
-    
-    @AppStorage("NSAutomaticWindowAnimationsEnabled", store: Store.global.store)
-    var newWindowAnimation: Bool?
+//    @AppStorage("NSWindowResizeTime", store: Store.global.store)
+//    var windowResizeAnimationLength: Double?
+//    
+//    @AppStorage("NSAutomaticWindowAnimationsEnabled", store: Store.global.store)
+//    var newWindowAnimation: Bool?
     
     // MARK: - Screenshot
     
@@ -123,8 +123,8 @@ final class SystemSettings: ObservableObject {
     @AppStorage("AppleShowAllFiles", store: Store.finder.store)
     var showHiddenFiles: Bool?
     
-    @AppStorage("NSDocumentSaveNewDocumentsToCloud", store: Store.global.store)
-    var saveToCloud: Bool?
+//    @AppStorage("NSDocumentSaveNewDocumentsToCloud", store: Store.global.store)
+//    var saveToCloud: Bool?
     
     @AppStorage("DisableAllAnimations", store: Store.finder.store)
     var disableFinderAnimations: Bool?
@@ -155,8 +155,8 @@ final class SystemSettings: ObservableObject {
     
     // MARK: - Quick Look
     
-    @AppStorage("QLPanelAnimationDuration", store: Store.global.store)
-    var quickLookAnimationDuration: Double?
+//    @AppStorage("QLPanelAnimationDuration", store: Store.global.store)
+//    var quickLookAnimationDuration: Double?
     
     // MARK: - Desktop
     
@@ -173,17 +173,54 @@ final class SystemSettings: ObservableObject {
     
     // MARK: - Keyboard
     
-    @AppStorage("ApplePressAndHoldEnabled", store: Store.global.store)
-    var disableAccentsOnKeyHold: Bool?
-    
-    @AppStorage("NSTextInsertionPointBlinkPeriodOn", store: Store.global.store)
-    var insertionPointBlinkRateOn: Double?
-    
-    @AppStorage("NSTextInsertionPointBlinkPeriodOff", store: Store.global.store)
-    var insertionPointBlinkRateOff: Double?
+//    @AppStorage("ApplePressAndHoldEnabled", store: Store.global.store)
+//    var disableAccentsOnKeyHold: Bool?
+//
+//    @AppStorage("NSTextInsertionPointBlinkPeriodOn", store: Store.global.store)
+//    var insertionPointBlinkRateOn: Double?
+//
+//    @AppStorage("NSTextInsertionPointBlinkPeriodOff", store: Store.global.store)
+//    var insertionPointBlinkRateOff: Double?
     
     // MARK: - Crash Reporter
     
     @AppStorage("UseUNC", store: Store.crashReporter.store)
     var sendNotificationOnAppCrash: Bool?
 }
+
+// TODO: Implement an AppStorage alternative using this function.
+func defaultsWrite(_ value: any Codable, to key: String, in store: String) {
+    let (type, value): (String?, String?) = {
+        switch value {
+            case is Bool:
+                return ("bool", "\(value)")
+            case is String:
+                return ("string", "'\(value)'")
+            case is Int:
+                return ("int", "\(value)")
+            case is Double:
+                return ("float", "\(value)")
+            default:
+                return (nil, nil)
+        }
+    }()
+    
+    guard let type, let value else {
+        return
+    }
+    
+    let shellPath = URL(filePath: "/usr/bin/defaults")
+    let arguments = [
+        "write",
+        store,
+        key,
+        "-\(type)",
+        value
+    ]
+    
+    let task = try? Process.run(shellPath, arguments: arguments)
+#if DEBUG
+    print(task!.arguments)
+#endif
+    task?.waitUntilExit()
+    }

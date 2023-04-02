@@ -15,6 +15,7 @@ struct DefaulterApp: App {
         Window("Defaulter", id: "mainWindow") {
             MainWindowView()
                 .environmentObject(systemSettings)
+                .fontDesign(.rounded)
          }
         .windowStyle(.hiddenTitleBar)
         .windowToolbarStyle(.unified)

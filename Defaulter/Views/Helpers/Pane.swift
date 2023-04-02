@@ -18,26 +18,16 @@ struct Pane: Hashable {
 }
 
 extension Pane {
-    static var mainPanes: [Pane] = [
-        Pane("Dock",
-                 systemImage: "dock.rectangle"),
-        Pane("Launchpad",
-                 systemImage: "square.grid.3x3"),
-        Pane("Windows",
-                 systemImage: "macwindow"),
-        Pane("Screenshot",
-                 systemImage: "camera.viewfinder"),
-        Pane("Finder",
-                 systemImage: "folder"),
-        Pane("Quick Look",
-                 systemImage: "eye"),
-        Pane("Desktop",
-                 systemImage: "menubar.dock.rectangle"),
-        Pane("Help Viewer",
-                 systemImage: "questionmark.circle"),
-        Pane("Keyboard",
-                 systemImage: "keyboard"),
-        Pane("Crash Reporter",
-                 systemImage: "exclamationmark.triangle")
-    ]
+    static var mainPanes: [Pane] = [dock, launchpad, windows, screenshot, finder, quickLook, desktop, helpViewer, keyboard, crashReporter]
+    
+    static let dock = Pane("Dock", systemImage: "dock.rectangle")
+    static let launchpad = Pane("Launchpad", systemImage: "square.grid.3x3")
+    static let windows = Pane("Windows", systemImage: "macwindow")
+    static let screenshot = Pane("Screenshot", systemImage: "camera.viewfinder")
+    static let finder = Pane("Finder", systemImage: "folder")
+    static let quickLook = Pane("Quick Look", systemImage: "eye")
+    static let desktop = Pane("Desktop", systemImage: "menubar.dock.rectangle")
+    static let helpViewer = Pane("Help Viewer", systemImage: "questionmark.circle")
+    static let keyboard = Pane("Keyboard", systemImage: "keyboard")
+    static let crashReporter = Pane("Crash Reporter", systemImage: "exclamationmark.triangle")
 }

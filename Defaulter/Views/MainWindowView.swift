@@ -9,22 +9,44 @@ import SwiftUI
 
 struct MainWindowView: View {
     @EnvironmentObject private var systemSettings: SystemSettings
-    @State private var currentPane: Pane = .mainPanes[0]
+    @State private var currentPane: Pane = .dock
     
     var body: some View {
         NavigationSplitView {
             List(Pane.mainPanes, id: \.self, selection: $currentPane) { pane in
                 Label(pane.name, systemImage: pane.systemImage)
                     .tag(pane)
-                    .fontDesign(.rounded)
             }
             .background(VisualEffectView(material: .popover).ignoresSafeArea())
         } detail: {
-            DockPane()
+            switch currentPane {
+                case .dock:
+                    DockPane()
+                case .launchpad:
+                    LaunchpadPane()
+                case .windows:
+                    WindowsPane()
+                case .screenshot:
+                    ScreenshotPane()
+                case .finder:
+                    FinderPane()
+                case .quickLook:
+                    QuickLookPane()
+                case .desktop:
+                    DesktopPane()
+                case .helpViewer:
+                    HelpViewerPane()
+                case .keyboard:
+                    KeyboardPane()
+                case .crashReporter:
+                    CrashReporterPane()
+                default:
+                    EmptyView()
+            }
         }
         .toolbar {
             Text(currentPane.name)
-                .font(.system(.title2, design: .rounded, weight: .semibold))
+                .font(.system(.title2, weight: .semibold))
         }
         .background(VisualEffectView(material: .sidebar).ignoresSafeArea())
     }

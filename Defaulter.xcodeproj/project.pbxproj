@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		346009C129D9083F00D9DAFB /* LaunchpadPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009C029D9083F00D9DAFB /* LaunchpadPane.swift */; };
+		346009C329D9086600D9DAFB /* WindowsPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009C229D9086600D9DAFB /* WindowsPane.swift */; };
+		346009C529D9087D00D9DAFB /* ScreenshotPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009C429D9087D00D9DAFB /* ScreenshotPane.swift */; };
+		346009C729D9089400D9DAFB /* FinderPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009C629D9089400D9DAFB /* FinderPane.swift */; };
+		346009C929D908AC00D9DAFB /* QuickLookPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009C829D908AC00D9DAFB /* QuickLookPane.swift */; };
+		346009CB29D908BA00D9DAFB /* DesktopPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009CA29D908BA00D9DAFB /* DesktopPane.swift */; };
+		346009CD29D908CC00D9DAFB /* HelpViewerPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009CC29D908CC00D9DAFB /* HelpViewerPane.swift */; };
+		346009CF29D908E200D9DAFB /* KeyboardPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009CE29D908E200D9DAFB /* KeyboardPane.swift */; };
+		346009D129D908F600D9DAFB /* CrashReporterPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009D029D908F600D9DAFB /* CrashReporterPane.swift */; };
 		3484749A29D8771300195712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3484749929D8771300195712 /* Assets.xcassets */; };
 		3484749D29D8771700195712 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3484749C29D8771700195712 /* Preview Assets.xcassets */; };
 		348474A029D8772800195712 /* DefaulterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484749F29D8772800195712 /* DefaulterApp.swift */; };
@@ -17,6 +26,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		346009C029D9083F00D9DAFB /* LaunchpadPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchpadPane.swift; sourceTree = "<group>"; };
+		346009C229D9086600D9DAFB /* WindowsPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowsPane.swift; sourceTree = "<group>"; };
+		346009C429D9087D00D9DAFB /* ScreenshotPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotPane.swift; sourceTree = "<group>"; };
+		346009C629D9089400D9DAFB /* FinderPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinderPane.swift; sourceTree = "<group>"; };
+		346009C829D908AC00D9DAFB /* QuickLookPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickLookPane.swift; sourceTree = "<group>"; };
+		346009CA29D908BA00D9DAFB /* DesktopPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesktopPane.swift; sourceTree = "<group>"; };
+		346009CC29D908CC00D9DAFB /* HelpViewerPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewerPane.swift; sourceTree = "<group>"; };
+		346009CE29D908E200D9DAFB /* KeyboardPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardPane.swift; sourceTree = "<group>"; };
+		346009D029D908F600D9DAFB /* CrashReporterPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashReporterPane.swift; sourceTree = "<group>"; };
 		3484748729D8763100195712 /* Defaulter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Defaulter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3484749929D8771300195712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3484749C29D8771700195712 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -106,6 +124,15 @@
 			isa = PBXGroup;
 			children = (
 				348474BB29D8E5D200195712 /* DockPane.swift */,
+				346009C029D9083F00D9DAFB /* LaunchpadPane.swift */,
+				346009C229D9086600D9DAFB /* WindowsPane.swift */,
+				346009C429D9087D00D9DAFB /* ScreenshotPane.swift */,
+				346009C629D9089400D9DAFB /* FinderPane.swift */,
+				346009C829D908AC00D9DAFB /* QuickLookPane.swift */,
+				346009CA29D908BA00D9DAFB /* DesktopPane.swift */,
+				346009CC29D908CC00D9DAFB /* HelpViewerPane.swift */,
+				346009CE29D908E200D9DAFB /* KeyboardPane.swift */,
+				346009D029D908F600D9DAFB /* CrashReporterPane.swift */,
 			);
 			path = Panes;
 			sourceTree = "<group>";
@@ -190,10 +217,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				348474BC29D8E5D200195712 /* DockPane.swift in Sources */,
+				346009C529D9087D00D9DAFB /* ScreenshotPane.swift in Sources */,
+				346009D129D908F600D9DAFB /* CrashReporterPane.swift in Sources */,
 				348474A029D8772800195712 /* DefaulterApp.swift in Sources */,
+				346009C329D9086600D9DAFB /* WindowsPane.swift in Sources */,
+				346009C929D908AC00D9DAFB /* QuickLookPane.swift in Sources */,
+				346009C129D9083F00D9DAFB /* LaunchpadPane.swift in Sources */,
+				346009CD29D908CC00D9DAFB /* HelpViewerPane.swift in Sources */,
+				346009CB29D908BA00D9DAFB /* DesktopPane.swift in Sources */,
 				348474A429D8773900195712 /* SystemSettings.swift in Sources */,
 				348474BA29D8D84000195712 /* Pane.swift in Sources */,
+				346009C729D9089400D9DAFB /* FinderPane.swift in Sources */,
 				348474A729D8774400195712 /* MainWindowView.swift in Sources */,
+				346009CF29D908E200D9DAFB /* KeyboardPane.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

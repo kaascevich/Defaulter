@@ -18,10 +18,9 @@ struct Pane: Hashable {
 }
 
 extension Pane {
-    static var mainPanes: [Pane] = [dock, menuBar, launchpad, windows, screenshot, finder, quickLook, desktop, keyboard, battery, printing, softwareUpdate, crashReporter, textEdit, mail]
+    static var mainPanes: [Pane] = [dock, launchpad, windows, screenshot, finder, quickLook, desktop, keyboard, battery, printing, softwareUpdate, crashReporter, textEdit, mail]
     
     static let dock = Pane("Dock", systemImage: "dock.rectangle")
-    static let menuBar = Pane("Menu Bar", systemImage: "menubar.rectangle")
     static let launchpad = Pane("Launchpad", systemImage: "square.grid.3x3")
     static let windows = Pane("Windows", systemImage: "macwindow")
     static let screenshot = Pane("Screenshot", systemImage: "camera.viewfinder")

@@ -78,11 +78,6 @@ final class SystemSettings: ObservableObject {
     @AppStorage("scroll-to-open", store: Store.dock.store)
     var dockScrollGestures: Bool = false
     
-    // MARK: - Menu Bar
-    
-    @AppStorage("DateFormat", store: Store.clock.store)
-    var dateFormat: String = "EEE MMM d h:mm a"
-    
     // MARK: - Launchpad
     
     @AppStorage("springboard-rows", store: Store.dock.store)

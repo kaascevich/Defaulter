@@ -22,8 +22,6 @@ struct MainWindowView: View {
             switch currentPane {
                 case .dock:
                     DockPane()
-                case .menuBar:
-                    MenuBarPane()
                 case .launchpad:
                     LaunchpadPane()
                 case .windows:

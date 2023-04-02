@@ -5,21 +5,23 @@ struct StepperField: View {
     var range: ClosedRange<Double>
     var step: Double
     var label: String
-    var isInt: Bool
+    var isInt: Bool = false
     init(value: Binding<Double>, in range: ClosedRange<Double>, step: Double = 1, label: String = "") {
         self._value = value
         self.range = range
         self.step = step
         self.label = label
-        isInt = false
     }
     init(value: Binding<Int>, in range: ClosedRange<Double>, step: Double = 1, label: String = "") {
         self.init(value: value.double, in: range, step: step, label: label)
+        isInt = true
     }
     
     private var formatter: NumberFormatter {
         let formatter = NumberFormatter()
         formatter.allowsFloats = !isInt
+        formatter.minimumFractionDigits = isInt ? 0 : 1
+        formatter.maximumFractionDigits = isInt ? 0 : 1
         formatter.minimum = range.lowerBound as NSNumber
         formatter.maximum = range.upperBound as NSNumber
         return formatter

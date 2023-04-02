@@ -10,13 +10,7 @@ import SwiftUI
 struct MenuBarPane: View {
     @EnvironmentObject private var systemSettings: SystemSettings
     @State private var isShowingDateTimeHelp = false
-    
-    //private let dateTimeHelp = {
-    //    let file = Bundle.main.path(forResource: "DateTimeHelp", ofType: "md")!
-    //    let markdown = try! String(contentsOfFile: file)
-    //    return try! AttributedString(markdown: markdown)
-    //}()
-    
+        
     var body: some View {
         Form {
             Section("Menu Extras") {
@@ -27,8 +21,7 @@ struct MenuBarPane: View {
                 }
                 .buttonStyle(.link)
                 .sheet(isPresented: $isShowingDateTimeHelp) {
-                    Text("Test")
-                        .padding()
+                    DateTimeHelpSheet(isShown: $isShowingDateTimeHelp)
                 }
             }
         }

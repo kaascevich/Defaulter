@@ -28,6 +28,8 @@
 		3487E8F629D9FCFB008A18ED /* SoftwareUpdatePane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487E8F529D9FCFB008A18ED /* SoftwareUpdatePane.swift */; };
 		3487E8F829D9FD0E008A18ED /* TextEditPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487E8F729D9FD0E008A18ED /* TextEditPane.swift */; };
 		3487E8FA29D9FD44008A18ED /* MailPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487E8F929D9FD44008A18ED /* MailPane.swift */; };
+		34CF921429DA273200DE00EC /* DateTimeHelpSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF921329DA273200DE00EC /* DateTimeHelpSheet.swift */; };
+		34CF921629DA295300DE00EC /* DateTimeFormatExperimentationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF921529DA295300DE00EC /* DateTimeFormatExperimentationSheet.swift */; };
 		34CFB49229D91AF500081782 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 34CFB49129D91AF500081782 /* Credits.html */; };
 		34CFB49429D91CEB00081782 /* StepperField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFB49329D91CEB00081782 /* StepperField.swift */; };
 /* End PBXBuildFile section */
@@ -56,7 +58,8 @@
 		3487E8F529D9FCFB008A18ED /* SoftwareUpdatePane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareUpdatePane.swift; sourceTree = "<group>"; };
 		3487E8F729D9FD0E008A18ED /* TextEditPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditPane.swift; sourceTree = "<group>"; };
 		3487E8F929D9FD44008A18ED /* MailPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailPane.swift; sourceTree = "<group>"; };
-		34CF920629DA0A4500DE00EC /* DateTimeHelp.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DateTimeHelp.md; sourceTree = "<group>"; };
+		34CF921329DA273200DE00EC /* DateTimeHelpSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeHelpSheet.swift; sourceTree = "<group>"; };
+		34CF921529DA295300DE00EC /* DateTimeFormatExperimentationSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeFormatExperimentationSheet.swift; sourceTree = "<group>"; };
 		34CFB49129D91AF500081782 /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		34CFB49329D91CEB00081782 /* StepperField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,7 +80,6 @@
 			children = (
 				3484749929D8771300195712 /* Assets.xcassets */,
 				34CFB49129D91AF500081782 /* Credits.html */,
-				34CF920629DA0A4500DE00EC /* DateTimeHelp.md */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -149,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				348474BB29D8E5D200195712 /* DockPane.swift */,
-				3487E8EF29D9FCC4008A18ED /* MenuBarPane.swift */,
+				34CF921229DA271A00DE00EC /* Menu Bar Pane */,
 				346009C029D9083F00D9DAFB /* LaunchpadPane.swift */,
 				346009C229D9086600D9DAFB /* WindowsPane.swift */,
 				346009C429D9087D00D9DAFB /* ScreenshotPane.swift */,
@@ -174,6 +176,16 @@
 				34CFB49329D91CEB00081782 /* StepperField.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		34CF921229DA271A00DE00EC /* Menu Bar Pane */ = {
+			isa = PBXGroup;
+			children = (
+				3487E8EF29D9FCC4008A18ED /* MenuBarPane.swift */,
+				34CF921329DA273200DE00EC /* DateTimeHelpSheet.swift */,
+				34CF921529DA295300DE00EC /* DateTimeFormatExperimentationSheet.swift */,
+			);
+			path = "Menu Bar Pane";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +263,7 @@
 				348474BC29D8E5D200195712 /* DockPane.swift in Sources */,
 				3487E8F629D9FCFB008A18ED /* SoftwareUpdatePane.swift in Sources */,
 				346009C529D9087D00D9DAFB /* ScreenshotPane.swift in Sources */,
+				34CF921629DA295300DE00EC /* DateTimeFormatExperimentationSheet.swift in Sources */,
 				3487E8F029D9FCC4008A18ED /* MenuBarPane.swift in Sources */,
 				3487E8FA29D9FD44008A18ED /* MailPane.swift in Sources */,
 				34CFB49429D91CEB00081782 /* StepperField.swift in Sources */,
@@ -261,6 +274,7 @@
 				346009C929D908AC00D9DAFB /* QuickLookPane.swift in Sources */,
 				346009C129D9083F00D9DAFB /* LaunchpadPane.swift in Sources */,
 				346009CB29D908BA00D9DAFB /* DesktopPane.swift in Sources */,
+				34CF921429DA273200DE00EC /* DateTimeHelpSheet.swift in Sources */,
 				348474A429D8773900195712 /* SystemSettings.swift in Sources */,
 				3487E8F229D9FCDC008A18ED /* BatteryPane.swift in Sources */,
 				348474BA29D8D84000195712 /* Pane.swift in Sources */,

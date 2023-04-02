@@ -13,9 +13,15 @@ final class SystemSettings: ObservableObject {
         case dock = "com.apple.dock"
         case screenshot = "com.apple.screencapture"
         case finder = "com.apple.finder"
-        case helpViewer = "com.apple.helpviewer"
         case crashReporter = "com.apple.CrashReporter"
         case notificationCenter = "com.apple.notificationcenterui"
+        case clock = "com.apple.menuextra.clock"
+        case desktopServices = "com.apple.desktopservices"
+        case powerChime = "com.apple.PowerChime"
+        case printing = "com.apple.PrintingPrefs"
+        case softwareUpdate = "com.apple.SoftwareUpdate"
+        case textEdit = "com.apple.TextEdit"
+        case mail = "com.apple.mail"
         case global = "NSGlobalDomain"
         
         var store: UserDefaults? {
@@ -26,13 +32,13 @@ final class SystemSettings: ObservableObject {
     // MARK: - Dock
     
     @AppStorage("autohide-time-modifier", store: Store.dock.store)
-    var dockAutohideSpeed: Double?
+    var dockAutohideSpeed: Double = 0.5
     
     @AppStorage("autohide-delay", store: Store.dock.store)
-    var dockAutohideDelay: Double?
+    var dockAutohideDelay: Double = 0.5
     
     @AppStorage("mineffect", store: Store.dock.store)
-    var minimizeEffect: String?
+    var minimizeEffect: String = "genie"
     enum MinimizeEffect: String, CaseIterable {
         case genie
         case scale
@@ -40,48 +46,59 @@ final class SystemSettings: ObservableObject {
     }
     
     @AppStorage("static-only", store: Store.dock.store)
-    var runningAppsOnly: Bool?
+    var runningAppsOnly: Bool = false
     
     @AppStorage("enable-spring-load-actions-on-all-items", store: Store.dock.store)
-    var springLoadingInDock: Bool?
+    var springLoadingInDock: Bool = true
     
     @AppStorage("showhidden", store: Store.dock.store)
-    var showHiddenAppsInDock: Bool?
+    var showHiddenAppsInDock: Bool = false
     
-    func addSpacer(addToStacksArea: Bool = false) {
+    func addSpacer(addToStacksArea: Bool = false, isSmall: Bool = false) {
         let dockLayoutType = addToStacksArea ? "persistent-others" : "persistent-apps"
         var dockLayout = Store.dock.store?.array(forKey: dockLayoutType)
         dockLayout?.append([
             "tile-data": [
                 "file-label": ""
             ],
-            "tile-type": "spacer-tile"
+            "tile-type": "\(isSmall ? "small-" : "")spacer-tile"
         ] as [String: Any])
         Store.dock.store?.set(dockLayout, forKey: dockLayoutType)
     }
     
     @AppStorage("mouse-over-hilite-stack", store: Store.dock.store)
-    var highlightStackItemsOnHover: Bool?
+    var highlightStackItemsOnHover: Bool = false
     
-    @AppStorage("single-app", store: Store.dock.store)
-    var singleAppMode: Bool?
+    @AppStorage("no-bouncing", store: Store.dock.store)
+    var disableBounceForAttention: Bool = false
+    
+    @AppStorage("size-immutable", store: Store.dock.store)
+    var preventDockResize: Bool = false
+    
+    @AppStorage("scroll-to-open", store: Store.dock.store)
+    var dockScrollGestures: Bool = false
+    
+    // MARK: - Menu Bar
+    
+    @AppStorage("DateFormat", store: Store.clock.store)
+    var dateFormat: String = "EEE MMM d h:mm a"
     
     // MARK: - Launchpad
     
     @AppStorage("springboard-rows", store: Store.dock.store)
-    var launchpadRows: Int?
+    var launchpadRows: Int = 7
     
     @AppStorage("springboard-columns", store: Store.dock.store)
-    var launchpadColumns: Int?
+    var launchpadColumns: Int = 5
     
     @AppStorage("springboard-show-duration", store: Store.dock.store)
-    var launchpadShowAnimationDuration: Double?
+    var launchpadShowAnimationDuration: Double = 1
     
     @AppStorage("springboard-hide-duration", store: Store.dock.store)
-    var launchpadHideAnimationDuration: Double?
+    var launchpadHideAnimationDuration: Double = 1
     
     @AppStorage("ResetLaunchPad", store: Store.dock.store)
-    var resetLaunchpadOnNextDockLaunch: Bool?
+    var resetLaunchpadOnNextDockLaunch: Bool = false
     
     // MARK: - Windows
     
@@ -89,21 +106,24 @@ final class SystemSettings: ObservableObject {
 //    var windowResizeAnimationLength: Double?
 //    
 //    @AppStorage("NSAutomaticWindowAnimationsEnabled", store: Store.global.store)
-//    var newWindowAnimation: Bool?
+//    var newWindowAnimation: Bool = true
+    
+    @AppStorage("single-app", store: Store.dock.store)
+    var singleAppMode: Bool = false
     
     // MARK: - Screenshot
     
     @AppStorage("disable-shadow", store: Store.screenshot.store)
-    var disableScreenshotShadow: Bool?
+    var disableScreenshotShadow: Bool = false
     
     @AppStorage("include-date", store: Store.screenshot.store)
-    var includeDateInScreenshotFilename: Bool?
+    var includeDateInScreenshotFilename: Bool = true
     
     @AppStorage("show-thumbnail", store: Store.screenshot.store)
-    var showScreenshotThumbnail: Bool?
+    var showScreenshotThumbnail: Bool = true
     
     @AppStorage("type", store: Store.screenshot.store)
-    var saveScreenshotAsType: String?
+    var saveScreenshotAsType: String = "png"
     enum ScreenshotFileType: String, CaseIterable {
         case png
         case jpg
@@ -115,43 +135,55 @@ final class SystemSettings: ObservableObject {
         case bmp
     }
     
+    @AppStorage("name", store: Store.screenshot.store)
+    var defaultScreenshotName: String = "Screenshot"
+    
     // MARK: - Finder
     
     @AppStorage("QuitMenuItem", store: Store.finder.store)
-    var enableFinderQuit: Bool?
+    var enableFinderQuit: Bool = false
     
     @AppStorage("AppleShowAllFiles", store: Store.finder.store)
-    var showHiddenFiles: Bool?
+    var showHiddenFiles: Bool = false
     
 //    @AppStorage("NSDocumentSaveNewDocumentsToCloud", store: Store.global.store)
-//    var saveToCloud: Bool?
+//    var saveToCloud: Bool = true
     
     @AppStorage("DisableAllAnimations", store: Store.finder.store)
-    var disableFinderAnimations: Bool?
+    var disableFinderAnimations: Bool = false
     
     @AppStorage("WarnOnEmptyTrash", store: Store.finder.store)
-    var warnWhenEmptyingTrash: Bool?
+    var warnWhenEmptyingTrash: Bool = true
     
     @AppStorage("ProhibitEject", store: Store.finder.store)
-    var disableEject: Bool?
+    var disableEject: Bool = false
     
     @AppStorage("ProhibitFinderPreferences", store: Store.finder.store)
-    var disableSettings: Bool?
+    var disableFinderSettings: Bool = false
     
     @AppStorage("ProhibitGoToFolder", store: Store.finder.store)
-    var disableGoToFolder: Bool?
+    var disableGoToFolder: Bool = false
     
     @AppStorage("ProhibitEmptyTrash", store: Store.finder.store)
-    var disableEmptyTrash: Bool?
+    var disableEmptyTrash: Bool = false
     
     @AppStorage("ProhibitConnectTo", store: Store.finder.store)
-    var disableConnectToServer: Bool?
+    var disableConnectToServer: Bool = false
     
-    @AppStorage("FinderSounds", store: Store.dock.store)
-    var finderSounds: Bool?
+    @AppStorage("FinderSounds", store: Store.finder.store)
+    var finderSounds: Bool = false
     
-    @AppStorage("ArchiveTimestamp", store: Store.dock.store)
-    var archiveTimestamp: Bool?
+    @AppStorage("ArchiveTimestamp", store: Store.finder.store)
+    var archiveTimestamp: Bool = false
+    
+    @AppStorage("_FXShowPosixPathInTitle", store: Store.finder.store)
+    var showFullPathInFinderTitleBar: Bool = false
+    
+    @AppStorage("DSDontWriteNetworkStores", store: Store.finder.store)
+    var disableDSStoreOnNetworkVolumes: Bool = false
+    
+    @AppStorage("DSDontWriteUSBStores", store: Store.finder.store)
+    var disableDSStoreOnUSBVolumes: Bool = false
     
     // MARK: - Quick Look
     
@@ -161,31 +193,56 @@ final class SystemSettings: ObservableObject {
     // MARK: - Desktop
     
     @AppStorage("CreateDesktop", store: Store.finder.store)
-    var showDesktopIcons: Bool?
+    var showDesktopIcons: Bool = true
     
     @AppStorage("desktop-picture-show-debug-text", store: Store.dock.store)
-    var showWallpaperPath: Bool?
-    
-    // MARK: - Help Viewer
-    
-    @AppStorage("DevMode", store: Store.helpViewer.store)
-    var disableHelpViewerAlwaysOnTop: Bool?
+    var showWallpaperPath: Bool = false
     
     // MARK: - Keyboard
     
 //    @AppStorage("ApplePressAndHoldEnabled", store: Store.global.store)
-//    var disableAccentsOnKeyHold: Bool?
+//    var disableAccentsOnKeyHold: Bool = true
 //
 //    @AppStorage("NSTextInsertionPointBlinkPeriodOn", store: Store.global.store)
-//    var insertionPointBlinkRateOn: Double?
+//    var insertionPointBlinkRateOn: Double = 0.5
 //
 //    @AppStorage("NSTextInsertionPointBlinkPeriodOff", store: Store.global.store)
-//    var insertionPointBlinkRateOff: Double?
+//    var insertionPointBlinkRateOff: Double = 0.5
+//
+//    @AppStorage("NSUseAnimatedFocusRing", store: Store.global.store)
+//    var animatedFocusRing: Bool = true
+    
+    // MARK: - Battery
+    
+    @AppStorage("ChimeOnNoHardware", store: Store.powerChime.store)
+    var disableChargingSound: Bool = false
+    
+    // MARK: - Printing
+    
+    @AppStorage("Quit When Finished", store: Store.printing.store)
+    var quitPrinterAppWhenPrintingFinishes: Bool = true
+    
+    // MARK: - SoftwareUpdate
+    
+    @AppStorage("ScheduleFrequency", store: Store.softwareUpdate.store)
+    var updateCheckFrequency: Int = 7
     
     // MARK: - Crash Reporter
     
     @AppStorage("UseUNC", store: Store.crashReporter.store)
-    var sendNotificationOnAppCrash: Bool?
+    var sendNotificationOnAppCrash: Bool = false
+    
+    // MARK: - TextEdit
+    
+    @AppStorage("NSShowAppCentricOpenPanelInsteadOfUntitledFile", store: Store.textEdit.store)
+    var showOpenPanelInsteadOfUntitledFile: Bool = true
+    
+    // MARK: - Mail
+    
+    @AppStorage("DisableSendAnimations", store: Store.mail.store)
+    var disableSendAnimations: Bool = false
+    @AppStorage("DisableReplyAnimations", store: Store.mail.store)
+    var disableReplyAnimations: Bool = false
 }
 
 // TODO: Implement an AppStorage alternative using this function.
@@ -219,8 +276,8 @@ func defaultsWrite(_ value: any Codable, to key: String, in store: String) {
     ]
     
     let task = try? Process.run(shellPath, arguments: arguments)
-#if DEBUG
+    #if DEBUG
     print(task!.arguments)
-#endif
+    #endif
     task?.waitUntilExit()
-    }
+}

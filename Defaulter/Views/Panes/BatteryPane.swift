@@ -1,13 +1,13 @@
 //
-//  HelpViewerPane.swift
+//  BatteryPane.swift
 //  Defaulter
 //
-//  Created by Kaleb on 4/1/23.
+//  Created by Kaleb on 4/2/23.
 //
 
 import SwiftUI
 
-struct HelpViewerPane: View {
+struct BatteryPane: View {
     @EnvironmentObject private var systemSettings: SystemSettings
     
     var body: some View {
@@ -16,12 +16,11 @@ struct HelpViewerPane: View {
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)
-        .background(VisualEffectView(material: .popover).ignoresSafeArea())
     }
 }
 
-struct HelpViewerPane_Previews: PreviewProvider {
+struct BatteryPane_Previews: PreviewProvider {
     static var previews: some View {
-        HelpViewerPane()
+        BatteryPane()
     }
 }

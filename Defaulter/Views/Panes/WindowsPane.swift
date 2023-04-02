@@ -15,10 +15,8 @@ struct WindowsPane: View {
             Text("Under Construction")
                 .font(.headline.weight(.medium))
         }
-        .fontDesign(.rounded)
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)
-        .background(VisualEffectView(material: .popover).ignoresSafeArea())
     }
 }
 

@@ -12,11 +12,13 @@ struct DesktopPane: View {
     
     var body: some View {
         Form {
-            
+            Toggle("Show desktop icons", isOn: systemSettings.$showDesktopIcons)
+            Section("Wallpaper") {
+                Toggle("Show file path to current wallpaper (warning: quite intrusive)", isOn: systemSettings.$showWallpaperPath)
+            }
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)
-        .background(VisualEffectView(material: .popover).ignoresSafeArea())
     }
 }
 

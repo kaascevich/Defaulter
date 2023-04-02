@@ -17,11 +17,13 @@ struct MainWindowView: View {
                 Label(pane.name, systemImage: pane.systemImage)
                     .tag(pane)
             }
-            .background(VisualEffectView(material: .popover).ignoresSafeArea())
+            .background(VisualEffectView(material: .hudWindow).ignoresSafeArea())
         } detail: {
             switch currentPane {
                 case .dock:
                     DockPane()
+                case .menuBar:
+                    MenuBarPane()
                 case .launchpad:
                     LaunchpadPane()
                 case .windows:
@@ -34,12 +36,20 @@ struct MainWindowView: View {
                     QuickLookPane()
                 case .desktop:
                     DesktopPane()
-                case .helpViewer:
-                    HelpViewerPane()
                 case .keyboard:
                     KeyboardPane()
+                case .battery:
+                    BatteryPane()
+                case .printing:
+                    PrintingPane()
+                case .softwareUpdate:
+                    SoftwareUpdatePane()
                 case .crashReporter:
                     CrashReporterPane()
+                case .textEdit:
+                    TextEditPane()
+                case .mail:
+                    MailPane()
                 default:
                     EmptyView()
             }
@@ -48,7 +58,7 @@ struct MainWindowView: View {
             Text(currentPane.name)
                 .font(.system(.title2, weight: .semibold))
         }
-        .background(VisualEffectView(material: .sidebar).ignoresSafeArea())
+        .background(VisualEffectView(material: .hudWindow).ignoresSafeArea())
     }
 }
 

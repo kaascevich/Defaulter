@@ -13,7 +13,6 @@
 		346009C729D9089400D9DAFB /* FinderPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009C629D9089400D9DAFB /* FinderPane.swift */; };
 		346009C929D908AC00D9DAFB /* QuickLookPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009C829D908AC00D9DAFB /* QuickLookPane.swift */; };
 		346009CB29D908BA00D9DAFB /* DesktopPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009CA29D908BA00D9DAFB /* DesktopPane.swift */; };
-		346009CD29D908CC00D9DAFB /* HelpViewerPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009CC29D908CC00D9DAFB /* HelpViewerPane.swift */; };
 		346009CF29D908E200D9DAFB /* KeyboardPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009CE29D908E200D9DAFB /* KeyboardPane.swift */; };
 		346009D129D908F600D9DAFB /* CrashReporterPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346009D029D908F600D9DAFB /* CrashReporterPane.swift */; };
 		3484749A29D8771300195712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3484749929D8771300195712 /* Assets.xcassets */; };
@@ -23,6 +22,14 @@
 		348474A729D8774400195712 /* MainWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348474A629D8774400195712 /* MainWindowView.swift */; };
 		348474BA29D8D84000195712 /* Pane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348474B929D8D84000195712 /* Pane.swift */; };
 		348474BC29D8E5D200195712 /* DockPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348474BB29D8E5D200195712 /* DockPane.swift */; };
+		3487E8F029D9FCC4008A18ED /* MenuBarPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487E8EF29D9FCC4008A18ED /* MenuBarPane.swift */; };
+		3487E8F229D9FCDC008A18ED /* BatteryPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487E8F129D9FCDC008A18ED /* BatteryPane.swift */; };
+		3487E8F429D9FCED008A18ED /* PrintingPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487E8F329D9FCED008A18ED /* PrintingPane.swift */; };
+		3487E8F629D9FCFB008A18ED /* SoftwareUpdatePane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487E8F529D9FCFB008A18ED /* SoftwareUpdatePane.swift */; };
+		3487E8F829D9FD0E008A18ED /* TextEditPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487E8F729D9FD0E008A18ED /* TextEditPane.swift */; };
+		3487E8FA29D9FD44008A18ED /* MailPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487E8F929D9FD44008A18ED /* MailPane.swift */; };
+		34CFB49229D91AF500081782 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 34CFB49129D91AF500081782 /* Credits.html */; };
+		34CFB49429D91CEB00081782 /* StepperField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFB49329D91CEB00081782 /* StepperField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +39,6 @@
 		346009C629D9089400D9DAFB /* FinderPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinderPane.swift; sourceTree = "<group>"; };
 		346009C829D908AC00D9DAFB /* QuickLookPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickLookPane.swift; sourceTree = "<group>"; };
 		346009CA29D908BA00D9DAFB /* DesktopPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesktopPane.swift; sourceTree = "<group>"; };
-		346009CC29D908CC00D9DAFB /* HelpViewerPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewerPane.swift; sourceTree = "<group>"; };
 		346009CE29D908E200D9DAFB /* KeyboardPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardPane.swift; sourceTree = "<group>"; };
 		346009D029D908F600D9DAFB /* CrashReporterPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashReporterPane.swift; sourceTree = "<group>"; };
 		3484748729D8763100195712 /* Defaulter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Defaulter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +50,14 @@
 		348474A629D8774400195712 /* MainWindowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowView.swift; sourceTree = "<group>"; };
 		348474B929D8D84000195712 /* Pane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pane.swift; sourceTree = "<group>"; };
 		348474BB29D8E5D200195712 /* DockPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockPane.swift; sourceTree = "<group>"; };
+		3487E8EF29D9FCC4008A18ED /* MenuBarPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarPane.swift; sourceTree = "<group>"; };
+		3487E8F129D9FCDC008A18ED /* BatteryPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryPane.swift; sourceTree = "<group>"; };
+		3487E8F329D9FCED008A18ED /* PrintingPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintingPane.swift; sourceTree = "<group>"; };
+		3487E8F529D9FCFB008A18ED /* SoftwareUpdatePane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareUpdatePane.swift; sourceTree = "<group>"; };
+		3487E8F729D9FD0E008A18ED /* TextEditPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditPane.swift; sourceTree = "<group>"; };
+		3487E8F929D9FD44008A18ED /* MailPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailPane.swift; sourceTree = "<group>"; };
+		34CFB49129D91AF500081782 /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		34CFB49329D91CEB00081782 /* StepperField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		346009D229D91A1800D9DAFB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3484749929D8771300195712 /* Assets.xcassets */,
+				34CFB49129D91AF500081782 /* Credits.html */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3484747E29D8763100195712 = {
 			isa = PBXGroup;
 			children = (
@@ -76,11 +99,11 @@
 		3484748929D8763100195712 /* Defaulter */ = {
 			isa = PBXGroup;
 			children = (
+				3484749E29D8772000195712 /* Defaulter.entitlements */,
 				3484749F29D8772800195712 /* DefaulterApp.swift */,
 				348474A129D8773900195712 /* Models */,
 				348474A529D8774400195712 /* Views */,
-				3484749929D8771300195712 /* Assets.xcassets */,
-				3484749E29D8772000195712 /* Defaulter.entitlements */,
+				346009D229D91A1800D9DAFB /* Resources */,
 				3484749B29D8771700195712 /* Preview Content */,
 			);
 			path = Defaulter;
@@ -124,15 +147,20 @@
 			isa = PBXGroup;
 			children = (
 				348474BB29D8E5D200195712 /* DockPane.swift */,
+				3487E8EF29D9FCC4008A18ED /* MenuBarPane.swift */,
 				346009C029D9083F00D9DAFB /* LaunchpadPane.swift */,
 				346009C229D9086600D9DAFB /* WindowsPane.swift */,
 				346009C429D9087D00D9DAFB /* ScreenshotPane.swift */,
 				346009C629D9089400D9DAFB /* FinderPane.swift */,
 				346009C829D908AC00D9DAFB /* QuickLookPane.swift */,
 				346009CA29D908BA00D9DAFB /* DesktopPane.swift */,
-				346009CC29D908CC00D9DAFB /* HelpViewerPane.swift */,
 				346009CE29D908E200D9DAFB /* KeyboardPane.swift */,
+				3487E8F129D9FCDC008A18ED /* BatteryPane.swift */,
+				3487E8F329D9FCED008A18ED /* PrintingPane.swift */,
+				3487E8F529D9FCFB008A18ED /* SoftwareUpdatePane.swift */,
 				346009D029D908F600D9DAFB /* CrashReporterPane.swift */,
+				3487E8F729D9FD0E008A18ED /* TextEditPane.swift */,
+				3487E8F929D9FD44008A18ED /* MailPane.swift */,
 			);
 			path = Panes;
 			sourceTree = "<group>";
@@ -141,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				348474B929D8D84000195712 /* Pane.swift */,
+				34CFB49329D91CEB00081782 /* StepperField.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -205,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3484749D29D8771700195712 /* Preview Assets.xcassets in Resources */,
+				34CFB49229D91AF500081782 /* Credits.html in Resources */,
 				3484749A29D8771300195712 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,16 +247,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				348474BC29D8E5D200195712 /* DockPane.swift in Sources */,
+				3487E8F629D9FCFB008A18ED /* SoftwareUpdatePane.swift in Sources */,
 				346009C529D9087D00D9DAFB /* ScreenshotPane.swift in Sources */,
+				3487E8F029D9FCC4008A18ED /* MenuBarPane.swift in Sources */,
+				3487E8FA29D9FD44008A18ED /* MailPane.swift in Sources */,
+				34CFB49429D91CEB00081782 /* StepperField.swift in Sources */,
+				3487E8F829D9FD0E008A18ED /* TextEditPane.swift in Sources */,
 				346009D129D908F600D9DAFB /* CrashReporterPane.swift in Sources */,
 				348474A029D8772800195712 /* DefaulterApp.swift in Sources */,
 				346009C329D9086600D9DAFB /* WindowsPane.swift in Sources */,
 				346009C929D908AC00D9DAFB /* QuickLookPane.swift in Sources */,
 				346009C129D9083F00D9DAFB /* LaunchpadPane.swift in Sources */,
-				346009CD29D908CC00D9DAFB /* HelpViewerPane.swift in Sources */,
 				346009CB29D908BA00D9DAFB /* DesktopPane.swift in Sources */,
 				348474A429D8773900195712 /* SystemSettings.swift in Sources */,
+				3487E8F229D9FCDC008A18ED /* BatteryPane.swift in Sources */,
 				348474BA29D8D84000195712 /* Pane.swift in Sources */,
+				3487E8F429D9FCED008A18ED /* PrintingPane.swift in Sources */,
 				346009C729D9089400D9DAFB /* FinderPane.swift in Sources */,
 				348474A729D8774400195712 /* MainWindowView.swift in Sources */,
 				346009CF29D908E200D9DAFB /* KeyboardPane.swift in Sources */,
@@ -364,7 +400,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright ©2023 Kaleb Ascevich";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -393,7 +429,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright ©2023 Kaleb Ascevich";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

@@ -12,11 +12,11 @@ struct QuickLookPane: View {
     
     var body: some View {
         Form {
-            
+            Text("Under Construction")
+                .font(.headline.weight(.medium))
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)
-        .background(VisualEffectView(material: .popover).ignoresSafeArea())
     }
 }
 

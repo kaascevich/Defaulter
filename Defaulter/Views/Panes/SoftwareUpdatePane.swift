@@ -1,13 +1,13 @@
 //
-//  DockPane.swift
+//  SoftwareUpdatePane.swift
 //  Defaulter
 //
-//  Created by Kaleb on 4/1/23.
+//  Created by Kaleb on 4/2/23.
 //
 
 import SwiftUI
 
-struct DockPane: View {
+struct SoftwareUpdatePane: View {
     @EnvironmentObject private var systemSettings: SystemSettings
     
     var body: some View {
@@ -19,8 +19,8 @@ struct DockPane: View {
     }
 }
 
-struct DockPane_Previews: PreviewProvider {
+struct SoftwareUpdatePane_Previews: PreviewProvider {
     static var previews: some View {
-        DockPane()
+        SoftwareUpdatePane()
     }
 }

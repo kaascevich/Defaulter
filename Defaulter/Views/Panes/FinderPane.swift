@@ -12,11 +12,20 @@ struct FinderPane: View {
     
     var body: some View {
         Form {
-            
+            Toggle("Disable animations", isOn: systemSettings.$disableFinderAnimations)
+            Toggle("Warn when emptying the Trash", isOn: systemSettings.$warnWhenEmptyingTrash)
+            Toggle("Play sounds", isOn: systemSettings.$finderSounds)
+            Toggle("Include timestamp in archive filenames", isOn: systemSettings.$archiveTimestamp)
+            Section("Menu Bar Commands") {
+                Toggle("Disable File > Eject", isOn: systemSettings.$disableEject)
+                Toggle("Disable Finder > Settings...", isOn: systemSettings.$disableFinderSettings)
+                Toggle("Disable Finder > Empty Trash...", isOn: systemSettings.$disableEmptyTrash)
+                Toggle("Disable Go > Go to Folder...", isOn: systemSettings.$disableGoToFolder)
+                Toggle("Disable Go > Connect to Server...", isOn: systemSettings.$disableConnectToServer)
+            }
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)
-        .background(VisualEffectView(material: .popover).ignoresSafeArea())
     }
 }
 

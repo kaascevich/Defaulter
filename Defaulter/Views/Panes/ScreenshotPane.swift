@@ -12,11 +12,20 @@ struct ScreenshotPane: View {
     
     var body: some View {
         Form {
-            
+            Toggle(isOn: systemSettings.$disableScreenshotShadow) {
+                Text("**Disable** screenshot shadows")
+            }
+            Toggle("Show thumbnail", isOn: systemSettings.$showScreenshotThumbnail)
+            Toggle("Include date in filenames", isOn: systemSettings.$includeDateInScreenshotFilename)
+            Picker("Save screenshots as:", selection: systemSettings.$saveScreenshotAsType) {
+                ForEach(SystemSettings.ScreenshotFileType.allCases, id: \.self) {
+                    Text($0.rawValue.uppercased())
+                        .tag($0.rawValue)
+                }
+            }
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)
-        .background(VisualEffectView(material: .popover).ignoresSafeArea())
     }
 }
 

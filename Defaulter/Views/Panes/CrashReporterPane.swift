@@ -12,11 +12,10 @@ struct CrashReporterPane: View {
     
     var body: some View {
         Form {
-            
+            Toggle("When an app crashes, send a notification to Notification Center", isOn: systemSettings.$sendNotificationOnAppCrash)
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)
-        .background(VisualEffectView(material: .popover).ignoresSafeArea())
     }
 }
 

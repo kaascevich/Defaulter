@@ -33,5 +33,6 @@ struct ScreenshotPane: View {
 struct ScreenshotPane_Previews: PreviewProvider {
     static var previews: some View {
         ScreenshotPane()
+            .environmentObject(SystemSettings())
     }
 }

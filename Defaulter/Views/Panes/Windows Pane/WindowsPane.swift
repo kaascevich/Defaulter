@@ -1,26 +1,27 @@
 //
-//  BatteryPane.swift
+//  WindowsPane.swift
 //  Defaulter
 //
-//  Created by Kaleb on 4/2/23.
+//  Created by Kaleb on 4/1/23.
 //
 
 import SwiftUI
 
-struct BatteryPane: View {
+struct WindowsPane: View {
     @EnvironmentObject private var systemSettings: SystemSettings
     
     var body: some View {
         Form {
-            Toggle("Disable charging sound", isOn: systemSettings.$disableChargingSound)
+            Toggle("Show one app at a time", isOn: systemSettings.$singleAppMode)
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)
     }
 }
 
-struct BatteryPane_Previews: PreviewProvider {
+struct WindowsPane_Previews: PreviewProvider {
     static var previews: some View {
-        BatteryPane()
+        WindowsPane()
+            .environmentObject(SystemSettings())
     }
 }

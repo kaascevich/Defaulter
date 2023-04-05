@@ -1,5 +1,5 @@
 //
-//  PrintingPane.swift
+//  BatteryPane.swift
 //  Defaulter
 //
 //  Created by Kaleb on 4/2/23.
@@ -7,20 +7,21 @@
 
 import SwiftUI
 
-struct PrintingPane: View {
+struct BatteryPane: View {
     @EnvironmentObject private var systemSettings: SystemSettings
     
     var body: some View {
         Form {
-            Toggle("Quit printer app when printing finishes", isOn: systemSettings.$quitPrinterAppWhenPrintingFinishes)
+            Toggle("Disable charging sound", isOn: systemSettings.$disableChargingSound)
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)
     }
 }
 
-struct PrintingPane_Previews: PreviewProvider {
+struct BatteryPane_Previews: PreviewProvider {
     static var previews: some View {
-        PrintingPane()
+        BatteryPane()
+            .environmentObject(SystemSettings())
     }
 }

@@ -25,5 +25,6 @@ struct DesktopPane: View {
 struct DesktopPane_Previews: PreviewProvider {
     static var previews: some View {
         DesktopPane()
+            .environmentObject(SystemSettings())
     }
 }

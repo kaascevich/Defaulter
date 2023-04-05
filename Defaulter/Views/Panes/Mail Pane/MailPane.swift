@@ -23,5 +23,6 @@ struct MailPane: View {
 struct MailPane_Previews: PreviewProvider {
     static var previews: some View {
         MailPane()
+            .environmentObject(SystemSettings())
     }
 }

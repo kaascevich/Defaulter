@@ -7,20 +7,19 @@
 
 import SwiftUI
 
-struct DockPane: View {
+struct AddSpacerButton: View {
     @EnvironmentObject private var systemSettings: SystemSettings
     
     var body: some View {
-        Form {
+        Button("Add Spacer") {
             
         }
-        .formStyle(.grouped)
-        .scrollContentBackground(.hidden)
     }
 }
 
-struct DockPane_Previews: PreviewProvider {
+struct AddSpacerButton_Previews: PreviewProvider {
     static var previews: some View {
-        DockPane()
+        AddSpacerButton()
+            .environmentObject(SystemSettings())
     }
 }

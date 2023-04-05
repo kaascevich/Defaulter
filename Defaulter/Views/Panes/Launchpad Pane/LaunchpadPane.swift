@@ -30,5 +30,6 @@ struct LaunchpadPane: View {
 struct LaunchpadPane_Previews: PreviewProvider {
     static var previews: some View {
         LaunchpadPane()
+            .environmentObject(SystemSettings())
     }
 }

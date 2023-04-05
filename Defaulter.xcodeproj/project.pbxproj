@@ -27,6 +27,7 @@
 		3487E8F629D9FCFB008A18ED /* SoftwareUpdatePane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487E8F529D9FCFB008A18ED /* SoftwareUpdatePane.swift */; };
 		3487E8F829D9FD0E008A18ED /* TextEditPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487E8F729D9FD0E008A18ED /* TextEditPane.swift */; };
 		3487E8FA29D9FD44008A18ED /* MailPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3487E8F929D9FD44008A18ED /* MailPane.swift */; };
+		34CF922629DA39F500DE00EC /* AddSpacerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF922529DA39F500DE00EC /* AddSpacerButton.swift */; };
 		34CFB49229D91AF500081782 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 34CFB49129D91AF500081782 /* Credits.html */; };
 		34CFB49429D91CEB00081782 /* StepperField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFB49329D91CEB00081782 /* StepperField.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		3487E8F529D9FCFB008A18ED /* SoftwareUpdatePane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareUpdatePane.swift; sourceTree = "<group>"; };
 		3487E8F729D9FD0E008A18ED /* TextEditPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEditPane.swift; sourceTree = "<group>"; };
 		3487E8F929D9FD44008A18ED /* MailPane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailPane.swift; sourceTree = "<group>"; };
+		34CF922529DA39F500DE00EC /* AddSpacerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSpacerButton.swift; sourceTree = "<group>"; };
 		34CFB49129D91AF500081782 /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		34CFB49329D91CEB00081782 /* StepperField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,20 +146,20 @@
 		348474AF29D8BBB000195712 /* Panes */ = {
 			isa = PBXGroup;
 			children = (
-				348474BB29D8E5D200195712 /* DockPane.swift */,
-				346009C029D9083F00D9DAFB /* LaunchpadPane.swift */,
-				346009C229D9086600D9DAFB /* WindowsPane.swift */,
-				346009C429D9087D00D9DAFB /* ScreenshotPane.swift */,
-				346009C629D9089400D9DAFB /* FinderPane.swift */,
-				346009C829D908AC00D9DAFB /* QuickLookPane.swift */,
-				346009CA29D908BA00D9DAFB /* DesktopPane.swift */,
-				346009CE29D908E200D9DAFB /* KeyboardPane.swift */,
-				3487E8F129D9FCDC008A18ED /* BatteryPane.swift */,
-				3487E8F329D9FCED008A18ED /* PrintingPane.swift */,
-				3487E8F529D9FCFB008A18ED /* SoftwareUpdatePane.swift */,
-				346009D029D908F600D9DAFB /* CrashReporterPane.swift */,
-				3487E8F729D9FD0E008A18ED /* TextEditPane.swift */,
-				3487E8F929D9FD44008A18ED /* MailPane.swift */,
+				34CF921729DA394400DE00EC /* Dock Pane */,
+				34CF921829DA394C00DE00EC /* Launchpad Pane */,
+				34CF921929DA395200DE00EC /* Windows Pane */,
+				34CF921A29DA395800DE00EC /* Screenshot Pane */,
+				34CF921B29DA396500DE00EC /* Finder Pane */,
+				34CF921C29DA398600DE00EC /* Quick Look Pane */,
+				34CF921D29DA399800DE00EC /* Desktop Pane */,
+				34CF921E29DA39A100DE00EC /* Keyboard Pane */,
+				34CF921F29DA39AB00DE00EC /* Battery Pane */,
+				34CF922029DA39B300DE00EC /* Printing Pane */,
+				34CF922129DA39BC00DE00EC /* Software Update Pane */,
+				34CF922229DA39C500DE00EC /* Crash Reporter Pane */,
+				34CF922329DA39D100DE00EC /* TextEdit Pane */,
+				34CF922429DA39D900DE00EC /* Mail Pane */,
 			);
 			path = Panes;
 			sourceTree = "<group>";
@@ -169,6 +171,119 @@
 				34CFB49329D91CEB00081782 /* StepperField.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		34CF921729DA394400DE00EC /* Dock Pane */ = {
+			isa = PBXGroup;
+			children = (
+				348474BB29D8E5D200195712 /* DockPane.swift */,
+				34CF922529DA39F500DE00EC /* AddSpacerButton.swift */,
+			);
+			path = "Dock Pane";
+			sourceTree = "<group>";
+		};
+		34CF921829DA394C00DE00EC /* Launchpad Pane */ = {
+			isa = PBXGroup;
+			children = (
+				346009C029D9083F00D9DAFB /* LaunchpadPane.swift */,
+			);
+			path = "Launchpad Pane";
+			sourceTree = "<group>";
+		};
+		34CF921929DA395200DE00EC /* Windows Pane */ = {
+			isa = PBXGroup;
+			children = (
+				346009C229D9086600D9DAFB /* WindowsPane.swift */,
+			);
+			path = "Windows Pane";
+			sourceTree = "<group>";
+		};
+		34CF921A29DA395800DE00EC /* Screenshot Pane */ = {
+			isa = PBXGroup;
+			children = (
+				346009C429D9087D00D9DAFB /* ScreenshotPane.swift */,
+			);
+			path = "Screenshot Pane";
+			sourceTree = "<group>";
+		};
+		34CF921B29DA396500DE00EC /* Finder Pane */ = {
+			isa = PBXGroup;
+			children = (
+				346009C629D9089400D9DAFB /* FinderPane.swift */,
+			);
+			path = "Finder Pane";
+			sourceTree = "<group>";
+		};
+		34CF921C29DA398600DE00EC /* Quick Look Pane */ = {
+			isa = PBXGroup;
+			children = (
+				346009C829D908AC00D9DAFB /* QuickLookPane.swift */,
+			);
+			path = "Quick Look Pane";
+			sourceTree = "<group>";
+		};
+		34CF921D29DA399800DE00EC /* Desktop Pane */ = {
+			isa = PBXGroup;
+			children = (
+				346009CA29D908BA00D9DAFB /* DesktopPane.swift */,
+			);
+			path = "Desktop Pane";
+			sourceTree = "<group>";
+		};
+		34CF921E29DA39A100DE00EC /* Keyboard Pane */ = {
+			isa = PBXGroup;
+			children = (
+				346009CE29D908E200D9DAFB /* KeyboardPane.swift */,
+			);
+			path = "Keyboard Pane";
+			sourceTree = "<group>";
+		};
+		34CF921F29DA39AB00DE00EC /* Battery Pane */ = {
+			isa = PBXGroup;
+			children = (
+				3487E8F129D9FCDC008A18ED /* BatteryPane.swift */,
+			);
+			path = "Battery Pane";
+			sourceTree = "<group>";
+		};
+		34CF922029DA39B300DE00EC /* Printing Pane */ = {
+			isa = PBXGroup;
+			children = (
+				3487E8F329D9FCED008A18ED /* PrintingPane.swift */,
+			);
+			path = "Printing Pane";
+			sourceTree = "<group>";
+		};
+		34CF922129DA39BC00DE00EC /* Software Update Pane */ = {
+			isa = PBXGroup;
+			children = (
+				3487E8F529D9FCFB008A18ED /* SoftwareUpdatePane.swift */,
+			);
+			path = "Software Update Pane";
+			sourceTree = "<group>";
+		};
+		34CF922229DA39C500DE00EC /* Crash Reporter Pane */ = {
+			isa = PBXGroup;
+			children = (
+				346009D029D908F600D9DAFB /* CrashReporterPane.swift */,
+			);
+			path = "Crash Reporter Pane";
+			sourceTree = "<group>";
+		};
+		34CF922329DA39D100DE00EC /* TextEdit Pane */ = {
+			isa = PBXGroup;
+			children = (
+				3487E8F729D9FD0E008A18ED /* TextEditPane.swift */,
+			);
+			path = "TextEdit Pane";
+			sourceTree = "<group>";
+		};
+		34CF922429DA39D900DE00EC /* Mail Pane */ = {
+			isa = PBXGroup;
+			children = (
+				3487E8F929D9FD44008A18ED /* MailPane.swift */,
+			);
+			path = "Mail Pane";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +361,7 @@
 				348474BC29D8E5D200195712 /* DockPane.swift in Sources */,
 				3487E8F629D9FCFB008A18ED /* SoftwareUpdatePane.swift in Sources */,
 				346009C529D9087D00D9DAFB /* ScreenshotPane.swift in Sources */,
+				34CF922629DA39F500DE00EC /* AddSpacerButton.swift in Sources */,
 				3487E8FA29D9FD44008A18ED /* MailPane.swift in Sources */,
 				34CFB49429D91CEB00081782 /* StepperField.swift in Sources */,
 				3487E8F829D9FD0E008A18ED /* TextEditPane.swift in Sources */,

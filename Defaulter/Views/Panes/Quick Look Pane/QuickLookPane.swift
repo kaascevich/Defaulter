@@ -1,5 +1,5 @@
 //
-//  WindowsPane.swift
+//  QuickLookPane.swift
 //  Defaulter
 //
 //  Created by Kaleb on 4/1/23.
@@ -7,20 +7,22 @@
 
 import SwiftUI
 
-struct WindowsPane: View {
+struct QuickLookPane: View {
     @EnvironmentObject private var systemSettings: SystemSettings
     
     var body: some View {
         Form {
-            Toggle("Show one app at a time", isOn: systemSettings.$singleAppMode)
+            Text("Under Construction")
+                .font(.headline.weight(.medium))
         }
         .formStyle(.grouped)
         .scrollContentBackground(.hidden)
     }
 }
 
-struct WindowsPane_Previews: PreviewProvider {
+struct QuickLookPane_Previews: PreviewProvider {
     static var previews: some View {
-        WindowsPane()
+        QuickLookPane()
+            .environmentObject(SystemSettings())
     }
 }

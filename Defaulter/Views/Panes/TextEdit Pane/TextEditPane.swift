@@ -22,5 +22,6 @@ struct TextEditPane: View {
 struct TextEditPane_Previews: PreviewProvider {
     static var previews: some View {
         TextEditPane()
+            .environmentObject(SystemSettings())
     }
 }

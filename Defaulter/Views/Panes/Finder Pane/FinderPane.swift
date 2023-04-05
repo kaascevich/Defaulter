@@ -39,5 +39,6 @@ struct FinderPane: View {
 struct FinderPane_Previews: PreviewProvider {
     static var previews: some View {
         FinderPane()
+            .environmentObject(SystemSettings())
     }
 }

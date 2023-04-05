@@ -1,5 +1,5 @@
 //
-//  QuickLookPane.swift
+//  KeyboardPane.swift
 //  Defaulter
 //
 //  Created by Kaleb on 4/1/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuickLookPane: View {
+struct KeyboardPane: View {
     @EnvironmentObject private var systemSettings: SystemSettings
     
     var body: some View {
@@ -20,8 +20,9 @@ struct QuickLookPane: View {
     }
 }
 
-struct QuickLookPane_Previews: PreviewProvider {
+struct KeyboardPane_Previews: PreviewProvider {
     static var previews: some View {
-        QuickLookPane()
+        KeyboardPane()
+            .environmentObject(SystemSettings())
     }
 }

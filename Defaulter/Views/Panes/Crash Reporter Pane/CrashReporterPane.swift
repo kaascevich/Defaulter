@@ -22,5 +22,6 @@ struct CrashReporterPane: View {
 struct CrashReporterPane_Previews: PreviewProvider {
     static var previews: some View {
         CrashReporterPane()
+            .environmentObject(SystemSettings())
     }
 }

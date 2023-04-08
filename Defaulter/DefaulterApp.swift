@@ -9,12 +9,9 @@ import SwiftUI
 
 @main
 struct DefaulterApp: App {
-    @StateObject private var systemSettings = SystemSettings()
-    
     var body: some Scene {
         Window("Defaulter", id: "mainWindow") {
             MainWindowView()
-                .environmentObject(systemSettings)
                 .fontDesign(.rounded)
                 .frame(minWidth: 800, minHeight: 500)
          }

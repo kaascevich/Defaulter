@@ -7,21 +7,25 @@
 
 import SwiftUI
 
-struct BatteryPane: View {
-    @EnvironmentObject private var systemSettings: SystemSettings
+struct BatteryPane: Pane {
+    var name = "Battery"
+    var systemImage = "battery.50"
+    var category: PaneCategory = .system
     
     var body: some View {
-        Form {
-            Toggle("Disable charging sound", isOn: systemSettings.$disableChargingSound)
-        }
-        .formStyle(.grouped)
-        .scrollContentBackground(.hidden)
+        Toggle("Disable charging sound", isOn: Defaults.$disableChargingSound)
+    }
+}
+
+extension BatteryPane {
+    struct Defaults {
+        @AppStorage("ChimeOnNoHardware", store: stores["powerChime"]!)
+        static var disableChargingSound: Bool = false
     }
 }
 
 struct BatteryPane_Previews: PreviewProvider {
     static var previews: some View {
         BatteryPane()
-            .environmentObject(SystemSettings())
     }
 }

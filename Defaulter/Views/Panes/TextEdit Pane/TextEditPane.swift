@@ -7,21 +7,25 @@
 
 import SwiftUI
 
-struct TextEditPane: View {
-    @EnvironmentObject private var systemSettings: SystemSettings
+struct TextEditPane: Pane {
+    var name = "TextEdit"
+    var systemImage = "text.word.spacing"
+    var category: PaneCategory = .apps
     
     var body: some View {
-        Form {
-            Toggle("When opening TextEdit, create a new Untitled file instead of showing the open panel", isOn: systemSettings.$showOpenPanelInsteadOfUntitledFile)
-        }
-        .formStyle(.grouped)
-        .scrollContentBackground(.hidden)
+        Toggle("When opening TextEdit, create a new Untitled file instead of showing the open panel", isOn: Defaults.$showOpenPanelInsteadOfUntitledFile)
+    }
+}
+
+extension TextEditPane {
+    struct Defaults {
+        @AppStorage("NSShowAppCentricOpenPanelInsteadOfUntitledFile", store: stores["textEdit"]!)
+        static var showOpenPanelInsteadOfUntitledFile: Bool = true
     }
 }
 
 struct TextEditPane_Previews: PreviewProvider {
     static var previews: some View {
         TextEditPane()
-            .environmentObject(SystemSettings())
     }
 }

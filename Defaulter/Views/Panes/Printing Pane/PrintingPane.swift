@@ -7,21 +7,25 @@
 
 import SwiftUI
 
-struct PrintingPane: View {
-    @EnvironmentObject private var systemSettings: SystemSettings
+struct PrintingPane: Pane {
+    var name = "Printing"
+    var systemImage = "printer"
+    var category: PaneCategory = .system
     
     var body: some View {
-        Form {
-            Toggle("Quit printer app when printing finishes", isOn: systemSettings.$quitPrinterAppWhenPrintingFinishes)
-        }
-        .formStyle(.grouped)
-        .scrollContentBackground(.hidden)
+        Toggle("Quit printer app when printing finishes", isOn: Defaults.$quitPrinterAppWhenPrintingFinishes)
+    }
+}
+
+extension PrintingPane {
+    struct Defaults {
+        @AppStorage("Quit When Finished", store: stores["printing"]!)
+        static var quitPrinterAppWhenPrintingFinishes: Bool = true
     }
 }
 
 struct PrintingPane_Previews: PreviewProvider {
     static var previews: some View {
         PrintingPane()
-            .environmentObject(SystemSettings())
     }
 }

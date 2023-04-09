@@ -7,6 +7,16 @@
 
 import Foundation
 
-struct Pane {
+/// Represents a defaults pane.
+struct Pane: Codable {
+    /// The metadata for this pane.
+    var metadata: PaneMetadata
     
+    /// Creates a pane using a metadata object.
+    ///
+    /// - Parameters:
+    ///   - metadata: The metadata to identify this pane with.
+    init(_ metadata: PaneMetadata) {
+        self.metadata = metadata
+    }
 }

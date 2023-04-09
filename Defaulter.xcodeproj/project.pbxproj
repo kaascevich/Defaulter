@@ -22,6 +22,8 @@
 		347B20C429E228A400608C21 /* PaneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347B20AF29E228A400608C21 /* PaneKit.framework */; };
 		347B20C529E228A400608C21 /* PaneKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 347B20AF29E228A400608C21 /* PaneKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		347B20CE29E22A1E00608C21 /* Pane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347B20CD29E22A1E00608C21 /* Pane.swift */; };
+		347B20D029E22C8700608C21 /* PaneCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347B20CF29E22C8700608C21 /* PaneCategory.swift */; };
+		347B20D229E23FC300608C21 /* PaneMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347B20D129E23FC300608C21 /* PaneMetadata.swift */; };
 		3484749A29D8771300195712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3484749929D8771300195712 /* Assets.xcassets */; };
 		3484749D29D8771700195712 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3484749C29D8771700195712 /* Preview Assets.xcassets */; };
 		348474A029D8772800195712 /* DefaulterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3484749F29D8772800195712 /* DefaulterApp.swift */; };
@@ -102,6 +104,8 @@
 		347B20B829E228A400608C21 /* PaneKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaneKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		347B20BF29E228A400608C21 /* PaneKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneKitTests.swift; sourceTree = "<group>"; };
 		347B20CD29E22A1E00608C21 /* Pane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pane.swift; sourceTree = "<group>"; };
+		347B20CF29E22C8700608C21 /* PaneCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneCategory.swift; sourceTree = "<group>"; };
+		347B20D129E23FC300608C21 /* PaneMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneMetadata.swift; sourceTree = "<group>"; };
 		3484748729D8763100195712 /* Defaulter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Defaulter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3484749929D8771300195712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3484749C29D8771700195712 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				347B20CD29E22A1E00608C21 /* Pane.swift */,
+				347B20D129E23FC300608C21 /* PaneMetadata.swift */,
+				347B20CF29E22C8700608C21 /* PaneCategory.swift */,
 			);
 			path = "Pane Definition";
 			sourceTree = "<group>";
@@ -531,7 +537,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				347B20D029E22C8700608C21 /* PaneCategory.swift in Sources */,
 				347B20B329E228A400608C21 /* PaneKit.docc in Sources */,
+				347B20D229E23FC300608C21 /* PaneMetadata.swift in Sources */,
 				347B20CE29E22A1E00608C21 /* Pane.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

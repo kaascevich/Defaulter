@@ -7,84 +7,38 @@
 
 import SwiftUI
 
-struct FinderPane: Pane {
-    var name = "Finder"
-    var systemImage = "folder"
-    var category: PaneCategory = .apps
+struct FinderPane: View {
+    @EnvironmentObject private var systemSettings: SystemSettings
     
     var body: some View {
-        Toggle("Show hidden files", isOn: Defaults.$showHiddenFiles)
-        Toggle("Show full path in title bar", isOn: Defaults.$showFullPathInFinderTitleBar)
-        Toggle("Disable animations", isOn: Defaults.$disableFinderAnimations)
-        Toggle("Warn when emptying the Trash", isOn: Defaults.$warnWhenEmptyingTrash)
-        Toggle("Play sounds", isOn: Defaults.$finderSounds)
-        Toggle("Include timestamp in archive filenames", isOn: Defaults.$archiveTimestamp)
-        Section("Menu Bar Commands") {
-            Toggle("Enable Finder > Quit Finder", isOn: Defaults.$enableFinderQuit)
-            Toggle("Disable File > Eject", isOn: Defaults.$disableEject)
-            Toggle("Disable Finder > Settings...", isOn: Defaults.$disableFinderSettings)
-            Toggle("Disable Finder > Empty Trash...", isOn: Defaults.$disableEmptyTrash)
-            Toggle("Disable Go > Go to Folder...", isOn: Defaults.$disableGoToFolder)
-            Toggle("Disable Go > Connect to Server...", isOn: Defaults.$disableConnectToServer)
+        Form {
+            Toggle("Show hidden files", isOn: systemSettings.$showHiddenFiles)
+            Toggle("Show full path in title bar", isOn: systemSettings.$showFullPathInFinderTitleBar)
+            Toggle("Disable animations", isOn: systemSettings.$disableFinderAnimations)
+            Toggle("Warn when emptying the Trash", isOn: systemSettings.$warnWhenEmptyingTrash)
+            Toggle("Play sounds", isOn: systemSettings.$finderSounds)
+            Toggle("Include timestamp in archive filenames", isOn: systemSettings.$archiveTimestamp)
+            Section("Menu Bar Commands") {
+                Toggle("Enable Finder > Quit Finder", isOn: systemSettings.$enableFinderQuit)
+                Toggle("Disable File > Eject", isOn: systemSettings.$disableEject)
+                Toggle("Disable Finder > Settings...", isOn: systemSettings.$disableFinderSettings)
+                Toggle("Disable Finder > Empty Trash...", isOn: systemSettings.$disableEmptyTrash)
+                Toggle("Disable Go > Go to Folder...", isOn: systemSettings.$disableGoToFolder)
+                Toggle("Disable Go > Connect to Server...", isOn: systemSettings.$disableConnectToServer)
+            }
+            Section(".DS_Store Files") {
+                Toggle("Don't create .DS_Store files on network volumes", isOn: systemSettings.$disableDSStoreOnNetworkVolumes)
+                Toggle("Don't create .DS_Store files on USB volumes", isOn: systemSettings.$disableDSStoreOnUSBVolumes)
+            }
         }
-        Section(".DS_Store Files") {
-            Toggle("Don't create .DS_Store files on network volumes", isOn: Defaults.$disableDSStoreOnNetworkVolumes)
-            Toggle("Don't create .DS_Store files on USB volumes", isOn: Defaults.$disableDSStoreOnUSBVolumes)
-        }
-    }
-}
-
-extension FinderPane {
-    struct Defaults {
-        @AppStorage("QuitMenuItem", store: stores["finder"]!)
-        static var enableFinderQuit: Bool = false
-        
-        @AppStorage("AppleShowAllFiles", store: stores["finder"]!)
-        static var showHiddenFiles: Bool = false
-        
-        //    @AppStorage("NSDocumentSaveNewDocumentsToCloud", store: stores["global"]!)
-        //    static var saveToCloud: Bool = true
-        
-        @AppStorage("DisableAllAnimations", store: stores["finder"]!)
-        static var disableFinderAnimations: Bool = false
-        
-        @AppStorage("WarnOnEmptyTrash", store: stores["finder"]!)
-        static var warnWhenEmptyingTrash: Bool = true
-        
-        @AppStorage("ProhibitEject", store: stores["finder"]!)
-        static var disableEject: Bool = false
-        
-        @AppStorage("ProhibitFinderPreferences", store: stores["finder"]!)
-        static var disableFinderSettings: Bool = false
-        
-        @AppStorage("ProhibitGoToFolder", store: stores["finder"]!)
-        static var disableGoToFolder: Bool = false
-        
-        @AppStorage("ProhibitEmptyTrash", store: stores["finder"]!)
-        static var disableEmptyTrash: Bool = false
-        
-        @AppStorage("ProhibitConnectTo", store: stores["finder"]!)
-        static var disableConnectToServer: Bool = false
-        
-        @AppStorage("FinderSounds", store: stores["finder"]!)
-        static var finderSounds: Bool = false
-        
-        @AppStorage("ArchiveTimestamp", store: stores["finder"]!)
-        static var archiveTimestamp: Bool = false
-        
-        @AppStorage("_FXShowPosixPathInTitle", store: stores["finder"]!)
-        static var showFullPathInFinderTitleBar: Bool = false
-        
-        @AppStorage("DSDontWriteNetworkStores", store: stores["finder"]!)
-        static var disableDSStoreOnNetworkVolumes: Bool = false
-        
-        @AppStorage("DSDontWriteUSBStores", store: stores["finder"]!)
-        static var disableDSStoreOnUSBVolumes: Bool = false
+        .formStyle(.grouped)
+        .scrollContentBackground(.hidden)
     }
 }
 
 struct FinderPane_Previews: PreviewProvider {
     static var previews: some View {
         FinderPane()
+            .environmentObject(SystemSettings())
     }
 }

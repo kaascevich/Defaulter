@@ -7,26 +7,22 @@
 
 import SwiftUI
 
-struct QuickLookPane: Pane {
-    var name = "Quick Look"
-    var systemImage = "eye"
-    var category: PaneCategory = .system
+struct QuickLookPane: View {
+    @EnvironmentObject private var systemSettings: SystemSettings
     
     var body: some View {
-        Text("Under Construction")
-            .font(.headline.weight(.medium))
-    }
-}
-
-extension QuickLookPane {
-    struct Defaults {
-        //    @AppStorage("QLPanelAnimationDuration", store: stores["global"]!)
-        //    static var quickLookAnimationDuration: Double?
+        Form {
+            Text("Under Construction")
+                .font(.headline.weight(.medium))
+        }
+        .formStyle(.grouped)
+        .scrollContentBackground(.hidden)
     }
 }
 
 struct QuickLookPane_Previews: PreviewProvider {
     static var previews: some View {
         QuickLookPane()
+            .environmentObject(SystemSettings())
     }
 }

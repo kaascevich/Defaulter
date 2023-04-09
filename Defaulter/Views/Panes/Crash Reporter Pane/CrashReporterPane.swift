@@ -7,25 +7,21 @@
 
 import SwiftUI
 
-struct CrashReporterPane: Pane {
-    var name = "Crash Reporter"
-    var systemImage = "exclamationmark.triangle"
-    var category: PaneCategory = .system
+struct CrashReporterPane: View {
+    @EnvironmentObject private var systemSettings: SystemSettings
     
     var body: some View {
-        Toggle("When an app crashes, send a notification to Notification Center", isOn: Defaults.$sendNotificationOnAppCrash)
-    }
-}
-
-extension CrashReporterPane {
-    struct Defaults {
-        @AppStorage("UseUNC", store: stores["crashReporter"]!)
-        static var sendNotificationOnAppCrash: Bool = false
+        Form {
+            Toggle("When an app crashes, send a notification to Notification Center", isOn: systemSettings.$sendNotificationOnAppCrash)
+        }
+        .formStyle(.grouped)
+        .scrollContentBackground(.hidden)
     }
 }
 
 struct CrashReporterPane_Previews: PreviewProvider {
     static var previews: some View {
         CrashReporterPane()
+            .environmentObject(SystemSettings())
     }
 }

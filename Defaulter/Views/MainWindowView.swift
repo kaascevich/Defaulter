@@ -8,21 +8,49 @@
 import SwiftUI
 
 struct MainWindowView: View {
-    @State private var currentPane: any Pane = panes[0]
+    @EnvironmentObject private var systemSettings: SystemSettings
+    @State private var currentPane: Pane = .dock
     
     var body: some View {
         NavigationSplitView {
-            /*List(PaneCategory.allCases, id: \.rawValue, selection: $currentPane) { category in
-                Section(category.rawValue.capitalized) {
-                    ForEach(categories[category]!, id: \.name) { pane in
-                        Label(pane.name, systemImage: pane.systemImage)
-                            .tag(pane.name)
-                    }
-                }
+            List(Pane.mainPanes, id: \.self, selection: $currentPane) { pane in
+                Label(pane.name, systemImage: pane.systemImage)
+                    .tag(pane)
             }
-            .background(VisualEffectView(material: .hudWindow).ignoresSafeArea())*/
+            .background(VisualEffectView(material: .hudWindow).ignoresSafeArea())
         } detail: {
-            //currentPane.paneView
+            switch currentPane {
+                case .dock:
+                    DockPane()
+                case .launchpad:
+                    LaunchpadPane()
+                case .windows:
+                    WindowsPane()
+                case .screenshot:
+                    ScreenshotPane()
+                case .finder:
+                    FinderPane()
+                case .quickLook:
+                    QuickLookPane()
+                case .desktop:
+                    DesktopPane()
+                case .keyboard:
+                    KeyboardPane()
+                case .battery:
+                    BatteryPane()
+                case .printing:
+                    PrintingPane()
+                case .softwareUpdate:
+                    SoftwareUpdatePane()
+                case .crashReporter:
+                    CrashReporterPane()
+                case .textEdit:
+                    TextEditPane()
+                case .mail:
+                    MailPane()
+                default:
+                    EmptyView()
+            }
         }
         .toolbar {
             Text(currentPane.name)

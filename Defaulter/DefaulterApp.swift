@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// Uncomment this line when testing package dependencies.
+// import PaneKit
+
 @main
 struct DefaulterApp: App {
     @StateObject private var systemSettings = SystemSettings()
